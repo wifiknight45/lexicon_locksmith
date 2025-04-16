@@ -1,0 +1,119 @@
+# Wordle Combinations Finder
+# Determines possible 5-letter English words based on guesses with letter placement constraints
+
+import re
+from collections import defaultdict
+
+# Sample list of valid 5-letter English words (replace with a comprehensive list)
+WORD_LIST = [
+    "apple", "audio", "baker", "beach", "candy", "chair", "dance", "eagle",
+    "flame", "ghost", "grape", "house", "image", "jolly", "knife", "lemon",
+    "mango", "night", "ocean", "party", "queen", "radio", "smile", "tiger",
+    "umbra", "vivid", "waste", "xerox", "yacht", "zebra"
+]
+
+def validate_guess(guess, feedback):
+    """Validate that the guess and feedback are correctly formatted."""
+    if len(guess) != 5 or not guess.isalpha():
+        return False, "Guess must be a 5-letter word containing only letters."
+    if len(feedback) != 5 or not all(c in 'GYR' for c in feedback):
+        return False, "Feedback must be 5 characters, each 'G' (green), 'Y' (yellow), or 'R' (red)."
+    return True, ""
+
+def filter_words(guesses, feedbacks, word_list):
+    """Filter word list based on guesses and their feedbacks."""
+    possible_words = word_list.copy()
+    
+    for guess, feedback in zip(guesses, feedbacks):
+        new_possible_words = []
+        for word in possible_words:
+            if is_valid_word(word, guess, feedback):
+                new_possible_words.append(word)
+        possible_words = new_possible_words
+    
+    return possible_words
+
+def is_valid_word(word, guess, feedback):
+    """Check if a word is valid given a guess and its feedback."""
+    # Track letters that must be included (from yellows and greens)
+    required_letters = defaultdict(int)
+    for i, (g, f) in enumerate(zip(guess, feedback)):
+        if f in 'GY':
+            required_letters[g] += 1
+    
+    # Check if word contains enough of each required letter
+    word_letter_count = defaultdict(int)
+    for c in word:
+        word_letter_count[c] += 1
+    for letter, count in required_letters.items():
+        if word_letter_count[letter] < count:
+            return False
+    
+    # Check position constraints
+    for i in range(5):
+        g, f, w = guess[i], feedback[i], word[i]
+        if f == 'G' and w != g:
+            return False  # Green: letter must be in this position
+        if f == 'Y' and w == g:
+            return False  # Yellow: letter must be in word but not here
+        if f == 'Y' and g not in word:
+            return False  # Yellow: letter must be in word
+        if f == 'R' and g in word:
+            # Red: letter must not be in word, unless required by green/yellow elsewhere
+            required_elsewhere = sum(1 for j, (gj, fj) in enumerate(zip(guess, feedback)) if gj == g and fj in 'GY')
+            if word_letter_count[g] > required_elsewhere:
+                return False
+    
+    return True
+
+def main():
+    print("Wordle Combinations Finder")
+    print("Enter guesses and feedback (G=green, Y=yellow, R=red). Type 'done' to finish.")
+    print("Example: Guess: 'crane', Feedback: 'GYRRR'")
+    
+    guesses = []
+    feedbacks = []
+    
+    while True:
+        try:
+            guess_input = input("Guess (or 'done' to finish): ").lower().strip()
+        except EOFError:
+            print("Input ended. Processing any provided guesses...")
+            break
+        
+        if guess_input == 'done':
+            break
+        
+        try:
+            feedback_input = input("Feedback (G/Y/R for each position): ").upper().strip()
+        except EOFError:
+            print("Input ended. Processing any provided guesses...")
+            break
+        
+        valid, error = validate_guess(guess_input, feedback_input)
+        if not valid:
+            print(f"Error: {error}")
+            continue
+        
+        guesses.append(guess_input)
+        feedbacks.append(feedback_input)
+    
+    if not guesses:
+        print("No guesses provided. All words are possible:")
+        print(WORD_LIST)
+        return
+    
+    # Filter possible words
+    possible_words = filter_words(guesses, feedbacks, WORD_LIST)
+    
+    # Output results
+    if possible_words:
+        print("\nPossible Wordle answers:")
+        for word in sorted(possible_words):
+            print(word)
+        print(f"Total possible words: {len(possible_words)}")
+    else:
+        print("\nNo words match the given constraints.")
+
+if __name__ == "__main__":
+    main()
