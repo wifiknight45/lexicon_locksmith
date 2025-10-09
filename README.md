@@ -122,12 +122,13 @@ Yellow Letter Validation - Confirms yellows exist in the word but NOT in the gue
 Red Letter Elimination - Removes words containing letters marked red (accounting for duplicates)
 Frequency Analysis - Suggests next guesses based on which words test the most uncovered letters
 
-Advanced Features
-Letter Frequency Suggestions
-When multiple possibilities remain, the script analyzes letter frequency across all remaining words and suggests guesses that will eliminate the most possibilities:
+## Advanced Features
+letter Frequency Suggestions
+**When multiple possibilities remain, the script analyzes letter frequency across all remaining words and suggests guesses that will eliminate the most possibilities:
 Suggested next guesses (best letter coverage):
   → STARE  # Tests common letters S, T, A, R, E
   → SLATE  # Tests common letters S, L, A, T, E
+
 Duplicate Letter Handling
 The script correctly handles words with duplicate letters:
 
@@ -135,45 +136,46 @@ Word: "SPEED"
 Guess: "ERASE" with feedback "YRRRG"
 Correctly identifies E appears twice but not where guessed
 
-Statistics
+## Statistics
+a) Dictionary Size: 500+ carefully curated common English words
+b) Average Filter Time: < 0.01 seconds
+c) Accuracy: 100% for valid Wordle solutions
+c) Supported Word Length: 5 letters (standard Wordle format)
 
-Dictionary Size: 500+ carefully curated common English words
-Average Filter Time: < 0.01 seconds
-Accuracy: 100% for valid Wordle solutions
-Supported Word Length: 5 letters (standard Wordle format)
-
-Contributing
+## Contributing
 Contributions are welcome. Here's how you can help:
 
-Fork the repository
+## Fork the repository
 Create a feature branch (git checkout -b feature/AmazingFeature)
 Commit your changes (git commit -m 'Add some AmazingFeature')
 Push to the branch (git push origin feature/AmazingFeature)
 Open a Pull Request
 
-Ideas for Contributions
+## Ideas for Contributions
 
-Expand the word dictionary
-Add support for Wordle variations (6-letter, themed words, etc.)
-Implement word difficulty scoring
-Add statistics tracking (average guesses to solve, etc.)
-Create a GUI version
-Add support for other languages
+a) Expand the word dictionary
+b) Add support for Wordle variations (6-letter, themed words, etc.)
+c) Implement word difficulty scoring
+d) Add statistics tracking (average guesses to solve, etc.)
+e) Create a GUI version
+f) Add support for other languages
 
-License
+## License
 This project is licensed under the MIT License - see the LICENSE file for details.
 Acknowledgments
 
 Inspired by the popular Wordle game by Josh Wardle
 Word list curated from common English language dictionaries
 
-Contact
-https://gitub.com/wifiknight45 - @wifiknight45
+## Contact
+
+https://gitub.com/wifiknight45 
+wifiknight45@proton.me
 Project Link: https://github.com/wifiknight45/lexicon_locksmith
-Script Link: wordle_combo_script.py
+Script Link: wordle_combo_script.py 
 
-Star History
-If you find this tool helpful, please consider giving it a star.
 
-Happy Wordling
-Made for Wordle enthusiasts
+## If you find this tool helpful, please consider giving it a star.
+
+## Happy Wordling
+designed for wordle enthusiasts and techies alike
