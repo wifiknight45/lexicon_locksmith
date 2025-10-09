@@ -1,3 +1,8 @@
+![GitHub repo size](https://img.shields.io/github/repo-size/wifiknight45/lexicon_locksmith)
+![GitHub language count](https://img.shields.io/github/languages/count/wifiknight45/lexicon_locksmith)
+![GitHub top language](https://img.shields.io/github/languages/top/wifiknight45/lexicon_locksmith)
+![GitHub last commit](https://img.shields.io/github/last-commit/wifiknight45/lexicon_locksmith)
+
 ## Lexicon Locksmith - Wordle Combinations Finder
 
 A powerful, intelligent Python script that helps you solve Wordle puzzles by filtering possible word combinations based on your guesses and feedback. Perfect for Wordle enthusiasts who want to improve their game strategy.
