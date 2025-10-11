@@ -1,6 +1,3 @@
-![GitHub stars](https://img.shields.io/github/stars/wifiknight45/lexicon_locksmith?style=social)
-![GitHub forks](https://img.shields.io/github/forks/wifiknight45/lexicon_locksmith?style=social)
-![GitHub watchers](https://img.shields.io/github/watchers/wifiknight45/lexicon_locksmith?style=social)
 ![Python](https://img.shields.io/badge/Python-11.5KB-blue?logo=python&logoColor=white)
 ![C#](https://img.shields.io/badge/C%23-12.5KB-239120?logo=csharp&logoColor=white)
 ![Visual Basic .NET](https://img.shields.io/badge/VB.NET-13.8KB-512BD4?logo=.net&logoColor=white)
