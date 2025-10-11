@@ -7,7 +7,9 @@
 
 A powerful, intelligent Python script that helps you solve Wordle puzzles by filtering possible word combinations based on your guesses and feedback. Perfect for Wordle enthusiasts who want to improve their game strategy. Please note this Readme.md is geared for the python script but there are also versions in C# and Visual Basic etc.
 
-please note that an updated version of the python script is now avaliable for those with visibility impairments (specifically those with low-vision or deutanopia (red-green color blindness) see the folder accessibility to run it at: 
+## Accessibility: 
+Please note that an updated version of the python script is now avaliable for those with visibility impairments inlcuding colorblindness (deutanopia specifically). Please see the folder titled "accessibility" to run it at: "accessibility/deutan_wordle_combo_finder.py" thank you. 
+
 
 ## Features
 
