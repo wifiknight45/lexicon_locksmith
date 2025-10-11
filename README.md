@@ -1,8 +1,12 @@
-![Python](https://img.shields.io/badge/Python-11.5KB-blue?logo=python&logoColor=white)
-![C#](https://img.shields.io/badge/C%23-12.5KB-239120?logo=csharp&logoColor=white)
-![Visual Basic .NET](https://img.shields.io/badge/VB.NET-13.8KB-512BD4?logo=.net&logoColor=white)
-![Top Language](https://img.shields.io/github/languages/top/wifiknight45/lexicon_locksmith)
 
+[![Python 3.6+](https://img.shields.io/badge/python-3.6+-blue.svg)](https://www.python.org/downloads/)
+[![Accessibility](https://img.shields.io/badge/accessibility-colorblind%20friendly-brightgreen.svg)](https://github.com/wifiknight45/lexicon_locksmith)
+[![Deutanopia](https://img.shields.io/badge/optimized-deutanopia-blue.svg)](https://github.com/wifiknight45/lexicon_locksmith)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Wordle](https://img.shields.io/badge/game-Wordle%20solver-success.svg)](https://github.com/wifiknight45/lexicon_locksmith)
+[![No Dependencies](https://img.shields.io/badge/dependencies-none-success.svg)](https://github.com/wifiknight45/lexicon_locksmith)
+[![High Contrast](https://img.shields.io/badge/display-high%20contrast%20mode-orange.svg)](https://github.com/wifiknight45/lexicon_locksmith)
+[![Symbol Support](https://img.shields.io/badge/symbols-visual%20encoding-purple.svg)](https://github.com/wifiknight45/lexicon_locksmith)
 ## Lexicon Locksmith - Wordle Combinations Finder
 
 A powerful, intelligent Python script that helps you solve Wordle puzzles by filtering possible word combinations based on your guesses and feedback. Perfect for Wordle enthusiasts who want to improve their game strategy. Please note this Readme.md is geared for the python script but there are also versions in C# and Visual Basic etc.
