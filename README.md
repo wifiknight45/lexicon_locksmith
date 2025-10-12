@@ -197,11 +197,11 @@ c) A huge thank you to @darkermango (https://github.com/darkermango) for the swe
 ## Contact
 
 wifiknight45@proton.me
+
 Project Link: https://github.com/wifiknight45/lexicon_locksmith
-Script Link: wordle_combo_script.py 
 
 
 ## If you find this tool helpful, please consider giving it a star.
 
 ## Happy Wordling
-designed for wordle enthusiasts and techies alike
+designed for students, techies and wordle enthusiasts 
