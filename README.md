@@ -188,6 +188,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 a) Inspired by the popular Wordle game by Josh Wardle.
 b) The word list used was curated from common English language dictionaries.
+c) A huge thank you to @darkermango (https://github.com/darkermango) for the sweet wordlist.
 
 
 ## Contact
