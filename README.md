@@ -45,27 +45,15 @@ bash
 git clone https://github.com/wifiknight45/lexicon_locksmith.git
 cd lexicon_locksmith
 
-2) Run the script (choose your desired version):
+2) Run the script:
 
 bash
 
-'wordle_combo_finder.cs' v1 (standard version)
-'wordle_combo_finder.vb' v1
-'wordle_combo_script.py' v1
-
-or 
-
-'deutan_wordle_combo_finder.py' v2 (accessibility version)
-
-or 
-
-**best option: 'wordle_combo_finder.py' - v3 (accessibility version + enhanced wordlist)**
-
-please note that the above 'wordle_combo_finder.py is still under dev as the word list needs to be manually formatted and I only have
-so much time to dedicate to it etc.
-
+'wordle_combo_finder.py' - v3 (accessibility version + enhanced wordlist)**
 
 That's it. No external dependencies required ;-)
+
+
 
 ## How to Use
 Basic Usage
