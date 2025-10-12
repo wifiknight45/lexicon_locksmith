@@ -39,14 +39,17 @@ Python 3.6 or higher
 
 ## Installation
 
-Clone the repository:
+1) Clone the repository:
 
-bashgit clone https://github.com/wifiknight45/lexicon_locksmith.git
+bash
+git clone https://github.com/wifiknight45/lexicon_locksmith.git
 cd lexicon_locksmith
 
-Run the script:
+2) Run the script:
 
-bashpython wordle_combo_script.py
+bash
+wordle_combo_script.py
+
 That's it. No external dependencies required ;-)
 
 ## How to Use
@@ -167,14 +170,16 @@ f) Add support for other languages
 
 ## License
 This project is licensed under the MIT License - see the LICENSE file for details.
-Acknowledgments
 
-Inspired by the popular Wordle game by Josh Wardle
-Word list curated from common English language dictionaries
+
+## Acknowledgments
+
+a) Inspired by the popular Wordle game by Josh Wardle.
+b) The word list used was curated from common English language dictionaries.
+
 
 ## Contact
 
-https://gitub.com/wifiknight45 
 wifiknight45@proton.me
 Project Link: https://github.com/wifiknight45/lexicon_locksmith
 Script Link: wordle_combo_script.py 
