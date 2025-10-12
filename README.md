@@ -60,6 +60,7 @@ or
 or 
 
 **best option: 'wordle_combo_finder.py' - v3 (accessibility version + enhanced wordlist)**
+
 please note that the above 'wordle_combo_finder.py is still under dev as the word list needs to be manually formatted and I only have
 so much time to dedicate to it etc.
 
