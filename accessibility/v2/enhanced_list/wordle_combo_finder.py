@@ -10,21 +10,6 @@ from typing import List, Tuple
 import sys
 import requests
 
-# Fetch word list from GitHub
-def fetch_word_list() -> List[str]:
-    """Fetch the word list from the GitHub repository."""
-    url = "https://darkermango.github.io/5-Letter-words/words.json"
-    try:
-        response = requests.get(url, timeout=20)
-        response.raise_for_status()
-        words = response.json()
-        print(f"✓ Successfully loaded {len(words)} words from remote source\n")
-        return [word.lower() for word in words]
-    except requests.exceptions.RequestException as e:
-        print(f"✗ Error fetching word list: {e}")
-        print("✓ Using fallback word list\n")
-        return get_fallback_word_list()
-
 def get_fallback_word_list() -> List[str]:
     """Fallback word list in case the remote fetch fails."""
     return [
