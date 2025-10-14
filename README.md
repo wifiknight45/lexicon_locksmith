@@ -81,8 +81,8 @@ Repeat for each guess you've made
 Type 'done' when finished to see all possible words
 
 
-## Happy Wordlin
-designed with love in california for students, techies and wordle enthusiasts 
+## Happy Wordlin dawg
+designed with love in california 
 
 
 ## License
