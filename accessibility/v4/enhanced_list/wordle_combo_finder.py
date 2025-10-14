@@ -632,8 +632,6 @@ def get_word_list() -> List[str]:
         "nerdy", "abend", "stela", "biggy", "laved", "baldy", "pubis", "gooks", "wonky", "stied", 
         "hypos", "assed", "spumy", "osier", "roble", "rumba", "biffy", "pupal"
     ]
-    ]
-
 
 # Color schemes - Deutanopia-friendly
 STANDARD_COLORS = {
