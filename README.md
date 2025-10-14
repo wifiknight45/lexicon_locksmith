@@ -17,33 +17,36 @@ Please note that an updated version of the python script is now avaliable for th
 
 ## Features
 
-Accurate Word Filtering - Handles complex scenarios including duplicate letters
+a) Accurate Word Filtering - Handles complex scenarios including duplicate letters
 
-Comprehensive Dictionary - 500+ common 5-letter English words
+b) Comprehensive Dictionary - 2,000+ common 5-letter English words
 
-Smart Suggestions - AI-powered recommendations for your next guess based on letter frequency analysis
+c) Smart Suggestions - AI-powered recommendations for your next guess based on letter frequency analysis
 
-Fast Performance - Efficient filtering algorithm processes possibilities instantly
+d) Fast Performance - Efficient filtering algorithm processes possibilities instantly
 
-Clean Interface - Formatted output with clear visual indicators
+f) Clean Interface - Formatted output with clear visual indicators
 
-Real-time Feedback - See remaining possibilities after each guess
+g) Real-time Feedback - See remaining possibilities after each guess
 
-Robust Error Handling - Validates input and provides helpful error messages
+h) Robust Error Handling - Validates input and provides helpful error messages
 
-## Quick Start
 
 ## Prerequisites
 
 Python 3.6 or higher
+
 
 ## Installation
 
 1) Clone the repository:
 
 bash
+
 git clone https://github.com/wifiknight45/lexicon_locksmith.git
+
 cd lexicon_locksmith
+
 
 2) Run the script:
 
@@ -53,14 +56,14 @@ bash
 
 That's it. No external dependencies required ;-)
 
-
-
 ## How to Use
 Basic Usage
 
-Start the script and you'll see the welcome screen
-Enter your guess - any 5-letter word you tried in Wordle
-Enter the feedback using these codes:
+a) Start the script and you'll see the welcome screen
+
+b) Enter your guess - any 5-letter word you tried in Wordle
+
+c) Enter the feedback using these codes:
 
 G = Green (correct letter, correct position)
 Y = Yellow (correct letter, wrong position)
@@ -70,116 +73,7 @@ R = Red (letter not in word)
 Repeat for each guess you've made
 Type 'done' when finished to see all possible words
 
-----------------------------------------------
 
-Example Session
-Enhanced Wordle Combinations Finder
-============================================
-
-Instructions:
-  - Enter your guess (5-letter word)
-  - Enter feedback: G (green), Y (yellow), R (red)
-  - Type 'done' when finished entering guesses
-  - Type 'quit' to exit
-
-Example:
-  Guess: crane
-  Feedback: GYRRR (C is green, R is yellow, rest are red)
-
-Enter guess (or 'done'/'quit'): crane
-Enter feedback (G/Y/R): GYRRR
-✓ Added guess. Remaining possibilities: 87
-
-Enter guess (or 'done'/'quit'): cloth
-Enter feedback (G/Y/R): GRRYR
-✓ Added guess. Remaining possibilities: 12
-
-Enter guess (or 'done'/'quit'): done
-
-============================================================
-RESULTS
-============================================================
-
-✓ Found 12 possible word(s):
-
-   1. CABBY
-   2. CADDY
-   3. CAMPY
-   4. CARBS
-   5. CARGO
-   6. CARRY
-   7. CATTY
-   8. CURVY
-   ...
-
-💡 Suggested next guesses (best letter coverage):
-  → CARGO
-  → CARRY
-  → CURVY
-
-============================================================
-Wordle Feedback Guide
-Understanding the feedback colors in Wordle:
-ColorCodeMeaningExampleGreenGCorrect letter in correct positionIf you guess "CRANE" and C is green, the word starts with CYellowYCorrect letter in wrong positionIf you guess "CRANE" and R is yellow, R exists but not in position 2Gray/RedRLetter not in the wordIf you guess "CRANE" and A is gray, A doesn't appear in the word
-Important Note: If a letter appears multiple times in your guess, pay attention to each occurrence:
-
-"SPEED" with feedback "GRRRG" means S is correct, E is correct at the end, but the middle E and P are not in the word
-
-Algorithm Details
-The script uses a sophisticated filtering algorithm:
-
-Green Letter Matching - Ensures letters marked green are in the exact position
-Yellow Letter Validation - Confirms yellows exist in the word but NOT in the guessed position
-Red Letter Elimination - Removes words containing letters marked red (accounting for duplicates)
-Frequency Analysis - Suggests next guesses based on which words test the most uncovered letters
-
-## Advanced Features
-letter Frequency Suggestions
-**When multiple possibilities remain, the script analyzes letter frequency across all remaining words and suggests guesses that will eliminate the most possibilities:
-Suggested next guesses (best letter coverage):
-  → STARE  # Tests common letters S, T, A, R, E
-  → SLATE  # Tests common letters S, L, A, T, E
-
-Duplicate Letter Handling
-The script correctly handles words with duplicate letters:
-
-Word: "SPEED"
-Guess: "ERASE" with feedback "YRRRG"
-Correctly identifies E appears twice but not where guessed
-
-## Statistics
-a) Dictionary Size: 500+ carefully curated common English words
-b) Average Filter Time: < 0.01 seconds
-c) Accuracy: 100% for valid Wordle solutions
-c) Supported Word Length: 5 letters (standard Wordle format)
-
-## Contributing
-Contributions are welcome. Here's how you can help:
-
-## Fork the repository
-Create a feature branch (git checkout -b feature/AmazingFeature)
-Commit your changes (git commit -m 'Add some AmazingFeature')
-Push to the branch (git push origin feature/AmazingFeature)
-Open a Pull Request
-
-## Ideas for Contributions
-
-a) Expand the word dictionary
-b) Add support for Wordle variations (6-letter, themed words, etc.)
-c) Implement word difficulty scoring
-d) Add statistics tracking (average guesses to solve, etc.)
-e) Create a GUI version
-f) Add support for other languages
-
-## License
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-
-
-
-
-
-## If you find this tool helpful, please consider giving it a star.
 
 ## Happy Wordling
 designed for students, techies and wordle enthusiasts 
@@ -409,19 +303,13 @@ Double-check your feedback entries
 Use undo to correct mistakes
 Ensure G/Y/R are entered correctly
 
-
-
-
 ## License
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-
 Acknowledgments
 a) Inspired by the popular Wordle game by Josh Wardle.
-b) The word list used was curated from common English language dictionaries.
-c) A huge thank you to @darkermango (https://github.com/darkermango) for the sweet wordlist.
-d) Color scheme designed following WCAG accessibility guidelines
-e) Optimized for deutanopia based on colorblind accessibility research
+b) A huge thank you to @darkermango (https://github.com/darkermango) for the sweet wordlist.
+c) Optimized for deutanopia based on colorblind accessibility research
 
 
 Version: 3.0
