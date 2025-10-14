@@ -633,6 +633,7 @@ def get_word_list() -> List[str]:
         "hypos", "assed", "spumy", "osier", "roble", "rumba", "biffy", "pupal"
     ]
 
+
 # Color schemes - Deutanopia-friendly
 STANDARD_COLORS = {
     'correct': '\033[94m',      # Blue (replaces green)
