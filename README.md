@@ -175,21 +175,253 @@ f) Add support for other languages
 This project is licensed under the MIT License - see the LICENSE file for details.
 
 
-## Acknowledgments
-
-a) Inspired by the popular Wordle game by Josh Wardle.
-b) The word list used was curated from common English language dictionaries.
-c) A huge thank you to @darkermango (https://github.com/darkermango) for the sweet wordlist.
 
 
-## Contact
-
-wifiknight45@proton.me
-
-Project Link: https://github.com/wifiknight45/lexicon_locksmith
 
 
 ## If you find this tool helpful, please consider giving it a star.
 
 ## Happy Wordling
 designed for students, techies and wordle enthusiasts 
+
+========
+Wordle Solver - Colorblind-Accessible Edition
+
+A powerful, accessible command-line tool for solving Wordle puzzles with enhanced support for colorblind users, particularly those with deutanopia (red-green colorblindness).
+
+Features
+a) Accessibility First
+
+b) Deutanopia-optimized color scheme: Uses blue, magenta, and gray instead of traditional green, yellow, and red
+
+c) Three display modes:
+
+  i.   Standard mode (colors + symbols)
+  
+  ii.  High contrast mode (enhanced backgrounds + symbols)
+  
+  iii. Colors-only mode (for users who prefer no symbols)
+
+d) Visual symbols: Each letter state has a unique symbol (█ ○ ·) for additional distinction
+
+e) Clear legend: Always available to reference color meanings
+
+## Intelligent Solving
+
+Smart word filtering: Handles complex constraints including duplicate letters
+Pattern visualization: Shows known letters and their positions
+Next-guess suggestions: Recommends optimal guesses based on letter frequency analysis
+Statistics: Displays helpful insights about remaining possibilities
+Large word database: Over 5,000+ common 5-letter English words
+
+## User-Friendly Features
+
+Interactive interface: Step-by-step guidance through the solving process
+Undo functionality: Remove incorrect guesses easily
+Export results: Save your solving session to a text file
+Input validation: Catches errors before processing
+Dictionary checking: Warns about words not in the database
+
+## Installation
+Requirements
+
+Python 3.6 or higher
+No external dependencies required (uses only Python standard library)
+
+## Setup
+
+Download the script:
+
+bashwget https://your-url/wordle_solver.py
+# or
+curl -O https://your-url/wordle_solver.py
+
+Make it executable (Unix/Linux/Mac):
+
+bashchmod +x wordle_solver.py
+
+Run it:
+
+bashpython3 wordle_solver.py
+# or
+./wordle_solver.py
+Usage
+Quick Start
+
+Launch the program:
+
+bashpython3 wordle_solver.py
+
+Choose your accessibility mode:
+
+Mode 1: Standard (recommended for most users)
+Mode 2: High contrast (for enhanced visibility)
+Mode 3: No symbols (colors only)
+
+
+Enter your guesses:
+
+Type a 5-letter word (e.g., crane)
+Enter the feedback using:
+
+G = Green (correct position)
+Y = Yellow (wrong position)
+R = Red (not in word)
+
+
+
+
+Get results:
+
+View possible words
+See pattern analysis
+Get next-guess suggestions
+
+
+
+Example Session
+Enter guess: crane
+Enter feedback: GYRRR
+
+  Visual: █C ○R ·A ·N ·E
+✓ Added guess. Remaining possibilities: 234
+
+Known Pattern: C _ _ _ _
+Must contain: R
+Cannot contain: A, N, E
+
+Enter guess: court
+Enter feedback: GRGRG
+
+  Visual: █C ·O ·U █R █T
+✓ Added guess. Remaining possibilities: 1
+
+RESULTS
+========================================
+Found 1 possible word:
+
+  1. CRYPT
+Commands
+During the solving process, you can use these commands:
+CommandDescriptiondoneFinish entering guesses and see resultsundoRemove the last guessexportSave results to wordle_results.txtlegendDisplay the color/symbol guide againquit / exit / qExit the program
+Understanding Feedback
+Color Scheme
+Standard Mode:
+
+🟦 Blue (█): Letter is correct and in the right position
+🟪 Magenta (○): Letter is in the word but wrong position
+⬛ Gray (·): Letter is not in the word
+
+High Contrast Mode:
+
+Same meanings with enhanced backgrounds for better visibility
+
+Handling Duplicate Letters
+The solver correctly handles words with duplicate letters:
+Example: If you guess SPEED and the answer is STEEL:
+
+First E: Yellow (wrong position)
+Second E: Green (correct position)
+Other letters: Based on their status
+
+Advanced Features
+Pattern Analysis
+The tool shows you:
+
+Known positions: Letters confirmed in specific spots
+Must contain: Letters that are in the word but position unknown
+Cannot contain: Letters that aren't in the word
+
+Next-Guess Suggestions
+When multiple words are possible, the tool suggests guesses that will:
+
+Eliminate the most possibilities
+Use high-frequency letters in common positions
+Maximize information gain
+
+Statistics
+View helpful insights:
+
+Most common letters in remaining words
+Most common first letters
+Letter frequency distribution
+
+Export Functionality
+Save your solving session including:
+
+All guesses and their feedback
+Complete list of possible words
+Formatted for easy reference
+
+Tips for Best Results
+
+Start with common letters: Words like CRANE, SLATE, or AROSE are good openers
+Use the undo feature: If you make a typo, just type undo
+Trust the suggestions: When many words remain, the suggested guesses are optimized for information gain
+Check the pattern: The visual pattern helps verify your input is correct
+Export before closing: Save your results for future reference
+
+Technical Details
+Algorithm
+The solver uses:
+
+Constraint satisfaction: Filters words based on position and presence constraints
+Frequency analysis: Scores words by letter frequency in remaining possibilities
+Duplicate letter handling: Correctly interprets feedback for repeated letters
+
+Performance
+
+Processes 5,000+ words instantly
+Handles complex constraint combinations
+Optimized for minimal memory usage
+
+Compatibility
+
+Operating Systems: Linux, macOS, Windows
+Terminals: Any terminal with ANSI color support
+Python Versions: 3.6+
+
+Accessibility Considerations
+This tool was designed with accessibility in mind:
+
+Colorblind-friendly: Uses blue/magenta/gray instead of green/yellow/red
+Multiple visual cues: Colors + symbols + text descriptions
+Keyboard-only operation: No mouse required
+Clear instructions: Step-by-step guidance
+Configurable display: Choose what works best for you
+
+Troubleshooting
+Colors not displaying correctly
+
+Ensure your terminal supports ANSI colors
+Try high contrast mode (option 2)
+Use colors-only mode (option 3) if symbols don't render
+
+Word not in dictionary
+
+The tool will warn you but allow you to continue
+Most common Wordle words are included
+You can still solve with words outside the dictionary
+
+No matches found
+
+Double-check your feedback entries
+Use undo to correct mistakes
+Ensure G/Y/R are entered correctly
+
+
+
+
+## License
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+
+Acknowledgments
+a) Inspired by the popular Wordle game by Josh Wardle.
+b) The word list used was curated from common English language dictionaries.
+c) A huge thank you to @darkermango (https://github.com/darkermango) for the sweet wordlist.
+d) Color scheme designed following WCAG accessibility guidelines
+e) Optimized for deutanopia based on colorblind accessibility research
+
+
+Version: 3.0
