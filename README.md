@@ -7,7 +7,10 @@
 [![No Dependencies](https://img.shields.io/badge/dependencies-none-success.svg)](https://github.com/wifiknight45/lexicon_locksmith)
 [![High Contrast](https://img.shields.io/badge/display-high%20contrast%20mode-orange.svg)](https://github.com/wifiknight45/lexicon_locksmith)
 [![Symbol Support](https://img.shields.io/badge/symbols-visual%20encoding-purple.svg)](https://github.com/wifiknight45/lexicon_locksmith)
+
 ## Lexicon Locksmith - Wordle Combinations Finder
+
+v5 is live but still under dev . . .
 
 A powerful, intelligent Python script that aids in solving Wordle puzzles by filtering possible word combinations based on your guesses and feedback. Perfect for Wordle enthusiasts who want to improve their game strategy. Please note this Readme.md is geared for the python script but there are also versions in C# and Visual Basic etc.
 
