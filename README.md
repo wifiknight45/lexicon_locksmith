@@ -41,6 +41,12 @@ Python 3.6 or higher
 
 ## Installation
 
+Simple method:
+
+copy + paste the code (v4) in the accessibility folder titled 'wordle_combo_finder.py' into a google colab notebook, Jupyter Notebook or IDE and you're set.
+
+Standard method:
+
 1) Clone the repository:
 
 bash
