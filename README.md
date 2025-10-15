@@ -95,5 +95,6 @@ b) A huge thank you to @darkermango (https://github.com/darkermango) for the swe
 
 c) Optimized for deutanopia based on colorblind accessibility research
 
-d) developed using anthropic claude.ai sonnet 4.5 + microsoft copilot gpt-5 
+d) developed using anthropic claude.ai sonnet 4.5 + microsoft copilot gpt-5 to aid in learning and teaching python best practices etc
+
 
