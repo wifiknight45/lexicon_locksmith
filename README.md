@@ -12,33 +12,26 @@
 A powerful, intelligent Python script that aids in solving Wordle puzzles by filtering possible word combinations based on your guesses and feedback. Perfect for Wordle enthusiasts who want to improve their game strategy. Please note this Readme.md is geared for the python script but there are also versions in C# and Visual Basic etc.
 
 ## Accessibility: 
-Please note that an updated version (i.e. v3) of the python script is now avaliable for those with visibility impairments inlcuding colorblindness (deutanopia specifically). Please see the folder titled "accessibility" to run it at: "accessibility/v3/wordle_combo_finder.py" thank you. 
+Please note that an updated version (i.e. v3) of the python script is now avaliable for those with visibility impairments inlcuding colorblindness (deutanopia specifically). Please see the folder titled "accessibility" to run it at: "accessibility/v4/enhanced_wordlist/wordle_combo_finder.py" 
 
 
 ## Features
 
-a) Accurate Word Filtering - Handles complex scenarios including duplicate letters
+(Colorblind-Accessible)
 
-b) Comprehensive Dictionary - 2,000+ common 5-letter English words
+Interactive Python tool that finds possible Wordle solutions based on your guesses and feedback.
 
-c) Smart Suggestions - AI-powered recommendations for your next guess based on letter frequency analysis
+Features
 
-d) Fast Performance - Efficient filtering algorithm processes possibilities instantly
+Colorblind-friendly design optimized for deutanopia (red-green colorblindness)
 
-f) Clean Interface - Formatted output with clear visual indicators
+Real-time filtering after each guess
 
-g) Real-time Feedback - See remaining possibilities after each guess
+Letter frequency analysis and smart suggestions
 
-h) Robust Error Handling - Validates input and provides helpful error messages
+Duplicate letter handling
 
-i) Three display modes:
-
-    i. Standard mode (colors + symbols)
-
-    ii. High contrast mode (enhanced backgrounds + symbols)
-
-    iii. Colors-only mode (for users who prefer no symbols)
-
+3 display modes: standard, high-contrast, symbols-only
 
 
 ## Prerequisites
@@ -61,7 +54,7 @@ bash
 
 bash
 
-**'wordle_combo_finder.py' - v3 (accessibility version + enhanced wordlist)**
+**'wordle_combo_finder.py' - v4 (accessibility version + enhanced wordlist)**
 
 That's it. No external dependencies required ;-)
 
