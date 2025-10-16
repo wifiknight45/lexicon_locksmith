@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 Format a word list into Python list format with quoted strings
 """
