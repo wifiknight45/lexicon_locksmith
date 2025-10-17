@@ -10,14 +10,16 @@
 
 ## Lexicon Locksmith - Wordle Combinations Finder
 
-v5 is live but still under dev . . . 
+  A powerful, intelligent Python script that aids in solving Wordle puzzles by filtering possible word combinations based on your guesses and feedback. Perfect for Wordle enthusiasts who want to improve their game strategy. Please note this Readme.md is geared for the python script but there are also versions in C# and Visual Basic etc.
+
+
+## v5 is live but still under dev . . . 
+
 
 ## to-do's:
 a) still need to format json properly for .ipynb etc 
 b) sanitize the wordlist.txt 
 
-
-A powerful, intelligent Python script that aids in solving Wordle puzzles by filtering possible word combinations based on your guesses and feedback. Perfect for Wordle enthusiasts who want to improve their game strategy. Please note this Readme.md is geared for the python script but there are also versions in C# and Visual Basic etc.
 
 ## Features
 
