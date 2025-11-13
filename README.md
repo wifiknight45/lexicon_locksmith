@@ -17,8 +17,7 @@
 
 
 ## to-do's:
-a) still need to format json properly for .ipynb etc 
-b) sanitize the wordlist.txt 
+ sanitize the wordlist.txt 
 
 
 ## Features
