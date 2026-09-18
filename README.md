@@ -1,5 +1,4 @@
-
-[![Python 3.6+](https://img.shields.io/badge/python-3.6+-blue.svg)](https://www.python.org/downloads/)
+[![Python 3.7+](https://img.shields.io/badge/python-3.7+-blue.svg)](https://www.python.org/downloads/)
 [![Accessibility](https://img.shields.io/badge/accessibility-colorblind%20friendly-brightgreen.svg)](https://github.com/wifiknight45/lexicon_locksmith)
 [![Deutanopia](https://img.shields.io/badge/optimized-deutanopia-blue.svg)](https://github.com/wifiknight45/lexicon_locksmith)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -10,92 +9,84 @@
 
 ## Lexicon Locksmith - Wordle Combinations Finder
 
-  A powerful, intelligent Python script that aids in solving Wordle puzzles by filtering possible word combinations based on your guesses and feedback. Perfect for Wordle enthusiasts who want to improve their game strategy. Please note this Readme.md is geared for the python script but there are also versions in C# and Visual Basic etc.
+A colorblind-accessible Wordle helper that filters possible solutions from your guesses and feedback (G/Y/R). Includes letter-frequency ranking and three display modes optimized for deutanopia.
 
-
-## v5 is live but still under dev . . . 
-
-
-## to-do's:
- sanitize the wordlist.txt 
-
-
-## Features
-
-(Colorblind-Accessible)
-
-Interactive Python tool that finds possible Wordle solutions based on your guesses and feedback.
-
-Features
-
-Colorblind-friendly design optimized for deutanopia (red-green colorblindness)
-
-Real-time filtering after each guess
-
-Letter frequency analysis and smart suggestions
-
-Duplicate letter handling
-
-3 display modes: standard, high-contrast, symbols-only
-
+The **canonical Python solver** is the accessibility v5 logic (ranking + accessibility modes), packaged so you do not need to dig under `accessibility/v5/`.
 
 ## Prerequisites
 
-Python 3.6 or higher
-
+- Python 3.7 or higher
+- No third-party packages required (stdlib only)
 
 ## Installation
 
-Standard method:
+```bash
+git clone https://github.com/wifiknight45/lexicon_locksmith.git
+cd lexicon_locksmith
+```
 
-1) Clone the repository:
+## Usage (canonical entrypoint)
 
-bash
+Any of these run the same solver:
 
-**'git clone https://github.com/wifiknight45/lexicon_locksmith.git'**
+```bash
+python wordle_combo_finder.py
+python -m lexicon_locksmith
+```
 
-**'cd lexicon_locksmith'**
+At startup, pick a display mode:
 
+1. Standard (blue / magenta / gray with symbols)
+2. High contrast
+3. Colors only (no symbols)
 
-2) Run the script:
+Then enter each guess and feedback:
 
-bash
+- **G** = correct letter, correct position
+- **Y** = correct letter, wrong position
+- **R** = letter not in the word (or excess duplicate)
 
-**'wordle_combo_finder.py' - v4 (accessibility version + enhanced wordlist)**
+Commands: `done`, `undo`, `export`, `legend`, `quit`
 
-That's it. No external dependencies required ;-)
+### Word list
 
-## How to Use
+`wordlist.txt` at the repo root is the source of truth: **one lowercase 5-letter alphabetic word per line**, deduplicated and sorted. The solver loads this file from disk (no embedded 600-line list).
 
-a) Start the script and you'll see the welcome screen
+Optional helper to reformat a list (works without Colab):
 
-b) Enter your guess - any 5-letter word you tried in Wordle
+```bash
+python workflows/colab/formatter.py some_words.txt -o wordlist.txt --plain
+```
 
-c) Enter the feedback using these codes:
+## Tests
 
-G = Green (correct letter, correct position)
-Y = Yellow (correct letter, wrong position)
-R = Red (letter not in word)
+```bash
+python -m unittest discover -s tests -v
+```
 
-Repeat for each guess you've made
-Type 'done' when finished to see all possible words
+## Project layout
 
+| Path | Role |
+|------|------|
+| `wordle_combo_finder.py` | **Canonical CLI entrypoint** (thin wrapper) |
+| `lexicon_locksmith/` | Canonical package (solver + wordlist loading) |
+| `wordlist.txt` | Sanitized on-disk word list |
+| `workflows/colab/formatter.py` | Word-list formatter (stdlib CLI; Colab optional) |
+| `tests/` | Unit tests |
+| `wordle_combo_script.py` | **Legacy** root script (embedded list) |
+| `accessibility/v1` … `v5/` | **Archive / legacy** accessibility iterations |
+| `v1/` | **Archive / legacy** C#, VB, early Python |
 
-## Happy Wordlin dawg
-designed with love in california 
+## Legacy / archive
 
+Older versions under `accessibility/`, `v1/`, and `wordle_combo_script.py` are kept for history. Prefer `wordle_combo_finder.py` / `python -m lexicon_locksmith` for day-to-day use.
 
 ## License
-This project is licensed under the MIT License - see the LICENSE file for details.
 
+MIT — see [LICENSE](LICENSE).
 
 ## Acknowledgments
-a) Inspired by the popular Wordle game by Josh Wardle.
 
-b) A huge thank you to @darkermango (https://github.com/darkermango) for the sweet wordlist.
-
-c) Optimized for deutanopia based on colorblind accessibility research
-
-d) developed using anthropic claude.ai sonnet 4.5 + microsoft copilot gpt-5 to aid in learning and teaching python best practices etc
-
-
+- Inspired by Wordle by Josh Wardle
+- Word list thanks to [@darkermango](https://github.com/darkermango)
+- Optimized for deutanopia based on colorblind accessibility research

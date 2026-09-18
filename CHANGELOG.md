@@ -51,3 +51,13 @@ Remembers preference during session
 Shows formatted display of each guess immediately after entry
 Summary view at the end showing all guesses visually
 Interactive legend command
+
+---
+## 5.1.0 — canonical package + wordlist hygiene
+
+- Added `lexicon_locksmith/` package and root `wordle_combo_finder.py` entrypoint
+- Solver loads sanitized `wordlist.txt` from disk (one 5-letter word per line)
+- Documented `accessibility/` and `v1/` as legacy/archive
+- Fixed duplicate `suggest_next_guess` in archived v5 script
+- Formatter works without Colab (stdlib CLI)
+- Added unittest suite for filtering, duplicates, ranking, and wordlist load

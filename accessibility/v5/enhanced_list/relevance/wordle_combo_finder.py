@@ -1,8 +1,12 @@
 #!/usr/bin/env python3
-"""
-Enhanced Wordle Combinations Finder (Colorblind-Accessible)
-Determines possible 5-letter English words based on guesses with letter placement constraints
-Optimized for deutanopia (red-green colorblindness)
+"""LEGACY / ARCHIVE — outdated copy.
+
+Prefer the canonical entrypoint at the repo root:
+  python wordle_combo_finder.py
+  # or: python -m lexicon_locksmith
+
+This archived file still embeds a large get_word_list() and may contain older bugs.
+Kept for history only.
 """
 
 from collections import Counter
@@ -954,38 +958,6 @@ def display_possible_words(possible_words: List[str], max_display: int = 20, sho
         remaining = num_words - max_display
         if remaining > 0:
             print(f"  {get_color('info')}... and {remaining} more{get_color('reset')}")
-
-
-def suggest_next_guess(possible_words: List[str], all_words: List[str]) -> List[str]:
-    """Suggest good next guesses using letter frequency analysis."""
-    if len(possible_words) <= 2:
-        return possible_words
-    
-    # If many possibilities remain, consider all words for maximum information gain
-    if len(possible_words) > 20:
-        search_space = all_words[:2000]  # Limit for performance
-    else:
-        search_space = possible_words
-    
-    # Score by positional letter frequency
-    position_freq = [Counter() for _ in range(5)]
-    for word in possible_words:
-        for i, letter in enumerate(word):
-            position_freq[i][letter] += 1
-    
-    word_scores = []
-    for word in search_space:
-        unique_letters = len(set(word))
-        position_score = sum(
-            position_freq[i][letter] 
-            for i, letter in enumerate(word)
-        )
-        # Prefer words with unique letters for more information
-        score = position_score * (unique_letters / 5)
-        word_scores.append((score, word))
-    
-    word_scores.sort(reverse=True)
-    return [word for _, word in word_scores[:5]]
 
 
 def show_statistics(possible_words: List[str]):
