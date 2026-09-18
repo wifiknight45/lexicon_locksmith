@@ -783,3 +783,47 @@ p {
 .glass-card h3 {
   margin-bottom: 0.35rem;
 }
+
+/* Shields.io badge row under hero title */
+.badge-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.4rem;
+  margin: 0 auto 1.1rem;
+  max-width: 40rem;
+}
+
+.badge-row a {
+  display: inline-flex;
+  line-height: 0;
+  text-decoration: none;
+  opacity: 0.92;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.badge-row a:hover {
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+.badge-row img {
+  height: 20px;
+  width: auto;
+  border-radius: 4px;
+}
+
+@media (max-width: 480px) {
+  .badge-row {
+    justify-content: flex-start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .badge-row a {
+    transition: none;
+  }
+  .badge-row a:hover {
+    transform: none;
+  }
+}
