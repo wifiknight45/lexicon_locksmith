@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NYT Wordle Helper &amp; Colorblind Solver | Lexicon Locksmith</title>
+  <meta name="description" content="Free open-source NYT Wordle helper and colorblind-friendly Wordle solver. Filter remaining word combinations with G/Y/R feedback. CLI + browser demo — not affiliated with The New York Times.">
+  <meta name="keywords" content="Wordle helper, NYT Wordle, Wordle solver, Wordle colorblind, Wordle combinations finder, deutanopia Wordle, Wordle filter">
+  <meta name="author" content="Lexicon Locksmith contributors">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://wifiknight45.github.io/lexicon_locksmith/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Lexicon Locksmith">
+  <meta property="og:title" content="NYT Wordle Helper &amp; Colorblind Solver | Lexicon Locksmith">
+  <meta property="og:description" content="Filter Wordle candidates from your guesses and G/Y/R feedback. Colorblind-accessible modes, letter-frequency ranking, free CLI and browser demo.">
+  <meta property="og:url" content="https://wifiknight45.github.io/lexicon_locksmith/">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="NYT Wordle Helper &amp; Colorblind Wordle Solver">
+  <meta name="twitter:description" content="Open-source Wordle combinations finder with G/Y/R filtering and deutanopia-friendly display modes. Free CLI + browser demo.">
+
+  <meta name="theme-color" content="#0f1419">
+  <link rel="stylesheet" href="styles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Lexicon Locksmith",
+    "applicationCategory": "GameApplication",
+    "operatingSystem": "Any (Python 3.7+ CLI; static web demo)",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "description": "A free open-source Wordle helper and colorblind-accessible Wordle solver that filters possible solutions from your guesses and G/Y/R feedback. Includes letter-frequency ranking and accessibility display modes. Not affiliated with The New York Times or Wordle.",
+    "url": "https://wifiknight45.github.io/lexicon_locksmith/",
+    "codeRepository": "https://github.com/wifiknight45/lexicon_locksmith",
+    "license": "https://opensource.org/licenses/MIT",
+    "keywords": ["Wordle helper", "NYT Wordle", "Wordle solver", "colorblind", "Wordle filter", "combinations finder"]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Lexicon Locksmith",
+    "url": "https://wifiknight45.github.io/lexicon_locksmith/",
+    "description": "NYT Wordle helper and colorblind-friendly Wordle combinations finder.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Lexicon Locksmith",
+      "url": "https://github.com/wifiknight45/lexicon_locksmith"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is Lexicon Locksmith?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Lexicon Locksmith is a free open-source Wordle helper (also useful for NYT Wordle) that filters remaining candidate words from your guesses and green/yellow/gray (G/Y/R) feedback. It includes letter-frequency ranking and colorblind-friendly display modes."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is this an official New York Times Wordle tool?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Lexicon Locksmith is an independent community project. It is not affiliated with, endorsed by, or sponsored by The New York Times or the official Wordle game."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does this Wordle solver spoil today's answer?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. The tool never fetches or displays official daily answers. It only filters a local word list based on the guesses and feedback you enter yourself."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does the G/Y/R Wordle filter work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "After each guess, enter feedback as five letters: G for green (correct letter and position), Y for yellow (letter in the word, wrong position), and R for gray/absent (letter not in the word, or excess duplicate). The helper removes words that contradict that feedback."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is Lexicon Locksmith colorblind-friendly?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The CLI offers display modes optimized for color vision deficiency, including high-contrast and symbol-based encoding designed with deutanopia in mind, in addition to standard colored output."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I run the Wordle helper on my computer?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Clone the GitHub repository, then run python wordle_combo_finder.py or python -m lexicon_locksmith. You need Python 3.7 or newer; no third-party packages are required."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="logo" href="https://wifiknight45.github.io/lexicon_locksmith/">Lexicon Locksmith</a>
+      <nav aria-label="Primary">
+        <ul>
+          <li><a href="#how-it-works">How it works</a></li>
+          <li><a href="#demo">Try demo</a></li>
+          <li><a href="#install">Install</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="https://github.com/wifiknight45/lexicon_locksmith">GitHub</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="wrap">
+        <h1 id="hero-title">NYT Wordle helper &amp; colorblind-friendly Wordle solver</h1>
+        <p class="lede">
+          Lexicon Locksmith is a free, open-source <strong>Wordle combinations finder</strong> that narrows remaining candidates from your guesses and G/Y/R feedback.
+          Built for everyday NYT Wordle play — with accessibility modes for colorblind users — without spoiling answers or claiming any New York Times affiliation.
+        </p>
+        <div class="badges" aria-label="Highlights">
+          <span class="badge">Wordle helper</span>
+          <span class="badge">Colorblind / deutanopia modes</span>
+          <span class="badge">G/Y/R filter</span>
+          <span class="badge">Python CLI · no dependencies</span>
+          <span class="badge">MIT license</span>
+        </div>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#demo">Try the browser demo</a>
+          <a class="btn btn-secondary" href="https://github.com/wifiknight45/lexicon_locksmith">View on GitHub</a>
+          <a class="btn btn-secondary" href="#install">Install the CLI</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="disclaimer-section" aria-labelledby="disclaimer-heading">
+      <div class="wrap">
+        <h2 id="disclaimer-heading" class="visually-hidden" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">Disclaimer</h2>
+        <div class="disclaimer" role="note">
+          <p><strong>Not affiliated with The New York Times or Wordle.</strong>
+          Lexicon Locksmith is an independent helper tool. It does not scrape, publish, or spoil official daily answers — you enter your own guesses and tile feedback.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="how-it-works" aria-labelledby="how-heading">
+      <div class="wrap">
+        <h2 id="how-heading">How this Wordle helper helps</h2>
+        <p>
+          Stuck mid-puzzle on NYT Wordle? Instead of guessing randomly, feed Lexicon Locksmith each word you already tried and the green / yellow / gray pattern you saw.
+          It filters a local five-letter word list so you can see which combinations remain — a practical <strong>Wordle solver</strong> workflow that keeps the puzzle yours.
+        </p>
+        <div class="feedback-legend" role="list">
+          <div class="legend-item" role="listitem">
+            <span class="swatch swatch-g" aria-hidden="true">G</span>
+            <div>
+              <strong>G — Green</strong>
+              <span>Letter is correct and in the right position.</span>
+            </div>
+          </div>
+          <div class="legend-item" role="listitem">
+            <span class="swatch swatch-y" aria-hidden="true">Y</span>
+            <div>
+              <strong>Y — Yellow</strong>
+              <span>Letter is in the word, but not in that position.</span>
+            </div>
+          </div>
+          <div class="legend-item" role="listitem">
+            <span class="swatch swatch-r" aria-hidden="true">R</span>
+            <div>
+              <strong>R — Gray / absent</strong>
+              <span>Letter is not in the word (or is an excess duplicate).</span>
+            </div>
+          </div>
+        </div>
+
+        <h3>What you get</h3>
+        <ul class="checklist">
+          <li><strong>Wordle filter / combinations finder</strong> — eliminate impossible words after every guess.</li>
+          <li><strong>Letter-frequency ranking</strong> — the CLI ranks remaining candidates to suggest informative next plays.</li>
+          <li><strong>Colorblind Wordle support</strong> — high-contrast and symbol modes tuned for deutanopia, not color alone.</li>
+          <li><strong>Offline &amp; private</strong> — runs locally from a word list on disk; no account and no answer feed.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="accessibility" aria-labelledby="a11y-heading">
+      <div class="wrap">
+        <h2 id="a11y-heading">Built for colorblind Wordle players</h2>
+        <p>
+          Many Wordle helpers assume green vs yellow is obvious. Lexicon Locksmith’s CLI lets you pick a display mode at startup:
+        </p>
+        <div class="card">
+          <ol>
+            <li><strong>Standard</strong> — blue / magenta / gray with symbols for redundant encoding.</li>
+            <li><strong>High contrast</strong> — stronger separation for low-vision and busy screens.</li>
+            <li><strong>Colors only</strong> — if you prefer no symbols.</li>
+          </ol>
+          <p style="margin-bottom:0">Modes are designed with <strong>deutanopia</strong> (common red–green color vision deficiency) in mind, so a Wordle colorblind workflow is a first-class feature — not an afterthought.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="demo" aria-labelledby="demo-heading">
+      <div class="wrap">
+        <h2 id="demo-heading">Try a lightweight Wordle filter demo</h2>
+        <p>
+          Enter a five-letter guess and five-character feedback (<code>G</code>, <code>Y</code>, <code>R</code>).
+          Candidates update from the same style of word list the CLI uses. For full ranking and accessibility modes, use the Python tool on GitHub.
+        </p>
+
+        <div class="card">
+          <form class="demo-form" id="demo-form" onsubmit="return false;" aria-describedby="demo-status">
+            <p id="demo-status" class="status-line" role="status" aria-live="polite">Loading…</p>
+
+            <div class="inputs-row">
+              <div class="form-row">
+                <label for="demo-guess">Guess (5 letters)</label>
+                <input id="demo-guess" type="text" maxlength="5" autocomplete="off" spellcheck="false" placeholder="CRANE" aria-describedby="guess-hint">
+                <p id="guess-hint" class="hint">Any five-letter word you played.</p>
+              </div>
+              <div class="form-row">
+                <label for="demo-feedback">Feedback (G/Y/R)</label>
+                <input id="demo-feedback" type="text" maxlength="5" autocomplete="off" spellcheck="false" placeholder="RYGRY" aria-describedby="fb-hint">
+                <p id="fb-hint" class="hint">Example: <code>RYGRY</code> for tiles left→right.</p>
+              </div>
+            </div>
+
+            <div class="cta-row">
+              <button type="button" class="btn btn-primary btn-small" id="demo-add">Add guess</button>
+              <button type="button" class="btn btn-secondary btn-small" id="demo-undo">Undo</button>
+              <button type="button" class="btn btn-secondary btn-small" id="demo-reset">Reset</button>
+            </div>
+
+            <div class="form-row">
+              <span class="hint" id="guesses-label">Guesses so far</span>
+              <ul class="guess-list" id="demo-guesses" aria-labelledby="guesses-label"></ul>
+            </div>
+
+            <div class="form-row">
+              <label id="candidates-label">Matching candidates: <strong id="demo-count">—</strong></label>
+              <div class="candidates" id="demo-candidates" aria-labelledby="candidates-label" role="region"></div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section id="install" aria-labelledby="install-heading">
+      <div class="wrap">
+        <h2 id="install-heading">Install &amp; run the Wordle CLI</h2>
+        <p>Requirements: <strong>Python 3.7+</strong>. No third-party packages.</p>
+
+        <h3>Clone the repository</h3>
+<pre><code>git clone https://github.com/wifiknight45/lexicon_locksmith.git
+cd lexicon_locksmith</code></pre>
+
+        <h3>Start the solver</h3>
+        <p>Any of these run the same canonical helper:</p>
+<pre><code>python wordle_combo_finder.py
+python -m lexicon_locksmith</code></pre>
+
+        <p>Then pick a display mode, enter each guess + G/Y/R feedback, and use commands like <code>done</code>, <code>undo</code>, <code>export</code>, <code>legend</code>, or <code>quit</code>.</p>
+
+        <div class="cta-row">
+          <a class="btn btn-primary" href="https://github.com/wifiknight45/lexicon_locksmith">Open GitHub repo</a>
+          <a class="btn btn-secondary" href="https://github.com/wifiknight45/lexicon_locksmith#usage-canonical-entrypoint">README usage section</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="seo-about" aria-labelledby="about-heading">
+      <div class="wrap">
+        <h2 id="about-heading">Wordle solver, filter, and combinations finder — in plain terms</h2>
+        <p>
+          People searching for a <strong>Wordle helper</strong>, <strong>NYT Wordle solver</strong>, <strong>Wordle colorblind</strong> tool, or <strong>Wordle combinations finder</strong>
+          usually want the same thing: a clear list of what can still fit after the tiles they already know.
+          Lexicon Locksmith focuses on that filter loop — honest G/Y/R logic, a maintainable word list, and accessibility — rather than automated answer spoilers.
+        </p>
+        <p>
+          Use the browser demo above for a quick filter, or the Python CLI when you want ranked suggestions and colorblind display modes on your own machine.
+        </p>
+      </div>
+    </section>
+
+    <section id="faq" class="faq" aria-labelledby="faq-heading">
+      <div class="wrap">
+        <h2 id="faq-heading">Frequently asked questions</h2>
+
+        <details>
+          <summary>What is Lexicon Locksmith?</summary>
+          <p>A free open-source Wordle helper (useful for NYT Wordle) that filters remaining candidate words from your guesses and green/yellow/gray (G/Y/R) feedback, with letter-frequency ranking and colorblind-friendly CLI modes.</p>
+        </details>
+        <details>
+          <summary>Is this an official New York Times Wordle tool?</summary>
+          <p>No. It is an independent community project and is not affiliated with, endorsed by, or sponsored by The New York Times or Wordle.</p>
+        </details>
+        <details>
+          <summary>Does this Wordle solver spoil today’s answer?</summary>
+          <p>No. It never fetches or displays official daily answers. It only filters a local word list based on the guesses and feedback you enter.</p>
+        </details>
+        <details>
+          <summary>How does the G/Y/R Wordle filter work?</summary>
+          <p>After each guess, enter five characters: <strong>G</strong> (correct letter and position), <strong>Y</strong> (in the word, wrong position), <strong>R</strong> (not in the word, or excess duplicate). Words that contradict the feedback are removed.</p>
+        </details>
+        <details>
+          <summary>Is Lexicon Locksmith colorblind-friendly?</summary>
+          <p>Yes. The CLI offers high-contrast and symbol-based modes designed with deutanopia in mind, so you are not relying on green vs yellow alone.</p>
+        </details>
+        <details>
+          <summary>How do I run the Wordle helper on my computer?</summary>
+          <p>Clone <a href="https://github.com/wifiknight45/lexicon_locksmith">the GitHub repo</a>, then run <code>python wordle_combo_finder.py</code> or <code>python -m lexicon_locksmith</code>. Python 3.7+; no pip dependencies.</p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p><strong>Lexicon Locksmith</strong> — open-source Wordle helper &amp; colorblind solver.</p>
+      <p>
+        <a href="https://github.com/wifiknight45/lexicon_locksmith">GitHub</a>
+        · <a href="https://github.com/wifiknight45/lexicon_locksmith/blob/main/LICENSE">MIT License</a>
+        · <a href="sitemap.xml">Sitemap</a>
+      </p>
+      <p>Wordle is a trademark of its respective owners. This site is not affiliated with The New York Times.</p>
+    </div>
+  </footer>
+
+  <script src="demo.js" defer></script>
+</body>
+</html>

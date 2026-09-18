@@ -6,12 +6,17 @@
 [![No Dependencies](https://img.shields.io/badge/dependencies-none-success.svg)](https://github.com/wifiknight45/lexicon_locksmith)
 [![High Contrast](https://img.shields.io/badge/display-high%20contrast%20mode-orange.svg)](https://github.com/wifiknight45/lexicon_locksmith)
 [![Symbol Support](https://img.shields.io/badge/symbols-visual%20encoding-purple.svg)](https://github.com/wifiknight45/lexicon_locksmith)
+[![GitHub Pages](https://img.shields.io/badge/site-GitHub%20Pages-222?logo=github)](https://wifiknight45.github.io/lexicon_locksmith/)
 
 ## Lexicon Locksmith - Wordle Combinations Finder
 
 A colorblind-accessible Wordle helper that filters possible solutions from your guesses and feedback (G/Y/R). Includes letter-frequency ranking and three display modes optimized for deutanopia.
 
 The **canonical Python solver** is the accessibility v5 logic (ranking + accessibility modes), packaged so you do not need to dig under `accessibility/v5/`.
+
+**Live site:** [https://wifiknight45.github.io/lexicon_locksmith/](https://wifiknight45.github.io/lexicon_locksmith/) — polished landing page, FAQ, and a lightweight in-browser Wordle filter demo (no answer spoilers).
+
+Useful search terms this project targets honestly: *NYT Wordle helper*, *Wordle solver colorblind*, *Wordle combinations finder*, *Wordle filter*. Not affiliated with The New York Times or Wordle.
 
 ## Prerequisites
 
@@ -76,6 +81,32 @@ python -m unittest discover -s tests -v
 | `wordle_combo_script.py` | **Legacy** root script (embedded list) |
 | `accessibility/v1` … `v5/` | **Archive / legacy** accessibility iterations |
 | `v1/` | **Archive / legacy** C#, VB, early Python |
+
+
+## Website (GitHub Pages)
+
+Static site lives in [`docs/`](docs/) and is published at:
+
+**https://wifiknight45.github.io/lexicon_locksmith/**
+
+Includes SEO-friendly title/meta/OG tags, FAQ + JSON-LD, `robots.txt` / `sitemap.xml`, accessible high-contrast CSS, and an optional browser demo that filters `docs/wordlist.txt` with G/Y/R feedback.
+
+### Enable GitHub Pages (maintainers)
+
+1. Open **Settings → Pages**
+2. Under **Build and deployment**, set **Source** to **Deploy from a branch**
+3. Branch: `main` (or the default branch), folder: `/docs`
+4. Save — the site usually appears within a minute or two
+
+Or via API (if you have admin rights):
+
+```bash
+gh api -X PUT "repos/wifiknight45/lexicon_locksmith/pages" \
+  -H "Accept: application/vnd.github+json" \
+  -f build_type=legacy \
+  -f source[branch]=main \
+  -f source[path]=/docs
+```
 
 ## Legacy / archive
 
