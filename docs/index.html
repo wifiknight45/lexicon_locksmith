@@ -69,7 +69,7 @@
         "name": "What is Lexicon Locksmith?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "A free open-source Wordle helper that filters remaining candidates from your guesses and G/Y/R feedback, with letter-frequency ranking and colorblind CLI modes."
+          "text": "Open-source Wordle helper: filter candidates from G/Y/R feedback. CLI ranking + colorblind modes."
         }
       },
       {
@@ -77,7 +77,7 @@
         "name": "Is this an official New York Times Wordle tool?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No. It is an independent community project, not affiliated with The New York Times or Wordle."
+          "text": "No. Not affiliated with The New York Times or Wordle."
         }
       },
       {
@@ -85,7 +85,7 @@
         "name": "Does this Wordle solver spoil today's answer?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No. It never fetches daily answers — it only filters a local word list from feedback you enter."
+          "text": "No. It never fetches daily answers."
         }
       },
       {
@@ -93,7 +93,7 @@
         "name": "How does the G/Y/R Wordle filter work?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Enter five characters per guess: G (correct position), Y (wrong position), R (absent). Candidates that contradict the pattern are removed."
+          "text": "G = right spot, Y = wrong spot, R = absent. Contradictions are removed."
         }
       },
       {
@@ -101,7 +101,7 @@
         "name": "Is Lexicon Locksmith colorblind-friendly?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. The CLI includes high-contrast and symbol modes designed with deutanopia in mind."
+          "text": "Yes. CLI high-contrast and symbol modes (deutanopia)."
         }
       },
       {
@@ -109,7 +109,7 @@
         "name": "How do I run the Wordle helper on my computer?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Clone the GitHub repo and run python wordle_combo_finder.py or python -m lexicon_locksmith (Python 3.7+, no pip deps)."
+          "text": "Clone the repo; run python wordle_combo_finder.py or python -m lexicon_locksmith."
         }
       }
     ]
@@ -138,54 +138,40 @@
   <main id="main">
     <section class="hero" aria-labelledby="hero-title">
       <div class="wrap">
-        <h1 id="hero-title">NYT Wordle helper &amp; colorblind-friendly Wordle solver</h1>
-        <p class="lede">
-          Free open-source <strong>Wordle combinations finder</strong> — filter remaining candidates from your guesses and G/Y/R feedback, with accessibility modes built in.
-        </p>
+        <h1 id="hero-title">NYT Wordle helper &amp; colorblind Wordle solver</h1>
+        <p class="lede">Filter remaining candidates from your G/Y/R feedback.</p>
         <div class="cta-row">
-          <a class="btn btn-primary" href="#demo">Try the demo</a>
-          <a class="btn btn-ghost" href="https://github.com/wifiknight45/lexicon_locksmith">View on GitHub</a>
+          <a class="btn btn-primary" href="#demo">Try demo</a>
+          <a class="btn btn-ghost" href="https://github.com/wifiknight45/lexicon_locksmith">GitHub</a>
         </div>
       </div>
     </section>
 
     <div class="wrap">
       <aside class="disclaimer-strip glass" role="note">
-        <p><strong>Not affiliated with The New York Times or Wordle.</strong> Independent helper — no answer spoilers; you enter your own guesses and tile feedback.</p>
+        <p><strong>Not affiliated with NYT or Wordle.</strong> No spoilers — you enter guesses.</p>
       </aside>
     </div>
 
     <section id="features" class="features" aria-labelledby="features-heading">
       <div class="wrap">
-        <h2 id="features-heading" class="section-title">What you get</h2>
+        <h2 id="features-heading" class="section-title visually-hidden">Features</h2>
         <div class="feature-grid">
           <article class="glass-card">
             <h3>G/Y/R filter</h3>
-            <ul>
-              <li>Eliminate impossible words after every guess</li>
-              <li>Same logic as the Python CLI</li>
-            </ul>
+            <p class="card-line">Cut impossible words</p>
           </article>
           <article class="glass-card">
             <h3>Smart ranking</h3>
-            <ul>
-              <li>Letter-frequency scoring in the CLI</li>
-              <li>Suggests informative next plays</li>
-            </ul>
+            <p class="card-line">CLI letter-frequency scores</p>
           </article>
           <article class="glass-card">
             <h3>Colorblind modes</h3>
-            <ul>
-              <li>High-contrast &amp; symbol encoding</li>
-              <li>Tuned for deutanopia</li>
-            </ul>
+            <p class="card-line">High-contrast &amp; symbols</p>
           </article>
           <article class="glass-card">
-            <h3>Offline &amp; private</h3>
-            <ul>
-              <li>Local word list — no account</li>
-              <li>MIT license · zero pip deps</li>
-            </ul>
+            <h3>Offline</h3>
+            <p class="card-line">Local list · MIT · no deps</p>
           </article>
         </div>
       </div>
@@ -193,27 +179,27 @@
 
     <section id="legend" class="legend-section" aria-labelledby="legend-heading">
       <div class="wrap">
-        <h2 id="legend-heading" class="section-title">Feedback tiles</h2>
+        <h2 id="legend-heading" class="section-title visually-hidden">Feedback</h2>
         <div class="feedback-legend" role="list">
           <div class="legend-chip glass" role="listitem">
             <span class="swatch swatch-g" aria-hidden="true">G</span>
             <div>
               <strong>Green</strong>
-              <span>Correct letter &amp; position</span>
+              <span>Right letter &amp; spot</span>
             </div>
           </div>
           <div class="legend-chip glass" role="listitem">
             <span class="swatch swatch-y" aria-hidden="true">Y</span>
             <div>
               <strong>Yellow</strong>
-              <span>In word, wrong spot</span>
+              <span>Wrong spot</span>
             </div>
           </div>
           <div class="legend-chip glass" role="listitem">
             <span class="swatch swatch-r" aria-hidden="true">R</span>
             <div>
               <strong>Gray</strong>
-              <span>Absent (or excess dup)</span>
+              <span>Absent / excess</span>
             </div>
           </div>
         </div>
@@ -222,8 +208,7 @@
 
     <section id="demo" aria-labelledby="demo-heading">
       <div class="wrap">
-        <h2 id="demo-heading" class="section-title">Interactive demo</h2>
-        <p class="section-lede">Enter a guess and five-character feedback (<code>G</code>/<code>Y</code>/<code>R</code>). Full ranking &amp; colorblind modes live in the CLI.</p>
+        <h2 id="demo-heading" class="section-title">Demo</h2>
 
         <div class="glass-panel demo-panel">
           <form class="demo-form" id="demo-form" onsubmit="return false;" aria-describedby="demo-status">
@@ -231,30 +216,28 @@
 
             <div class="inputs-row">
               <div class="form-row">
-                <label for="demo-guess">Guess (5 letters)</label>
-                <input id="demo-guess" type="text" maxlength="5" autocomplete="off" spellcheck="false" placeholder="CRANE" aria-describedby="guess-hint">
-                <p id="guess-hint" class="hint">Any five-letter word you played.</p>
+                <label for="demo-guess">Guess</label>
+                <input id="demo-guess" type="text" maxlength="5" autocomplete="off" spellcheck="false" placeholder="CRANE">
               </div>
               <div class="form-row">
-                <label for="demo-feedback">Feedback (G/Y/R)</label>
-                <input id="demo-feedback" type="text" maxlength="5" autocomplete="off" spellcheck="false" placeholder="RYGRY" aria-describedby="fb-hint">
-                <p id="fb-hint" class="hint">Example: <code>RYGRY</code></p>
+                <label for="demo-feedback">G/Y/R</label>
+                <input id="demo-feedback" type="text" maxlength="5" autocomplete="off" spellcheck="false" placeholder="RYGRY">
               </div>
             </div>
 
             <div class="cta-row">
-              <button type="button" class="btn btn-primary btn-small" id="demo-add">Add guess</button>
+              <button type="button" class="btn btn-primary btn-small" id="demo-add">Add</button>
               <button type="button" class="btn btn-ghost btn-small" id="demo-undo">Undo</button>
               <button type="button" class="btn btn-ghost btn-small" id="demo-reset">Reset</button>
             </div>
 
             <div class="form-row">
-              <span class="hint" id="guesses-label">Guesses so far</span>
+              <span class="hint" id="guesses-label">Guesses</span>
               <ul class="guess-list" id="demo-guesses" aria-labelledby="guesses-label"></ul>
             </div>
 
             <div class="form-row">
-              <label id="candidates-label">Matching candidates: <strong id="demo-count">—</strong></label>
+              <label id="candidates-label">Candidates: <strong id="demo-count">—</strong></label>
               <div class="candidates" id="demo-candidates" aria-labelledby="candidates-label" role="region"></div>
             </div>
           </form>
@@ -264,8 +247,7 @@
 
     <section id="install" aria-labelledby="install-heading">
       <div class="wrap">
-        <h2 id="install-heading" class="section-title">Install the CLI</h2>
-        <p class="section-lede">Python 3.7+ · no third-party packages.</p>
+        <h2 id="install-heading" class="section-title">Install</h2>
 
 <pre class="glass-code"><code>git clone https://github.com/wifiknight45/lexicon_locksmith.git
 cd lexicon_locksmith
@@ -273,8 +255,8 @@ python wordle_combo_finder.py
 # or: python -m lexicon_locksmith</code></pre>
 
         <div class="cta-row">
-          <a class="btn btn-primary" href="https://github.com/wifiknight45/lexicon_locksmith">Open GitHub repo</a>
-          <a class="btn btn-ghost" href="https://github.com/wifiknight45/lexicon_locksmith#usage-canonical-entrypoint">README usage</a>
+          <a class="btn btn-primary" href="https://github.com/wifiknight45/lexicon_locksmith">GitHub</a>
+          <a class="btn btn-ghost" href="https://github.com/wifiknight45/lexicon_locksmith#usage-canonical-entrypoint">README</a>
         </div>
       </div>
     </section>
@@ -285,27 +267,27 @@ python wordle_combo_finder.py
 
         <details class="glass-faq">
           <summary>What is Lexicon Locksmith?</summary>
-          <p>A free open-source Wordle helper that filters remaining candidates from your guesses and G/Y/R feedback, with letter-frequency ranking and colorblind CLI modes.</p>
+          <p>Open-source Wordle helper: filter candidates from G/Y/R feedback. CLI ranking + colorblind modes.</p>
         </details>
         <details class="glass-faq">
           <summary>Is this an official New York Times Wordle tool?</summary>
-          <p>No. Independent community project — not affiliated with The New York Times or Wordle.</p>
+          <p>No. Not affiliated with The New York Times or Wordle.</p>
         </details>
         <details class="glass-faq">
           <summary>Does this Wordle solver spoil today’s answer?</summary>
-          <p>No. It never fetches daily answers; it only filters a local word list from feedback you enter.</p>
+          <p>No. It never fetches daily answers.</p>
         </details>
         <details class="glass-faq">
           <summary>How does the G/Y/R Wordle filter work?</summary>
-          <p><strong>G</strong> = correct position, <strong>Y</strong> = wrong position, <strong>R</strong> = absent. Candidates that contradict the pattern are removed.</p>
+          <p><strong>G</strong> right spot, <strong>Y</strong> wrong spot, <strong>R</strong> absent. Contradictions removed.</p>
         </details>
         <details class="glass-faq">
           <summary>Is Lexicon Locksmith colorblind-friendly?</summary>
-          <p>Yes — CLI high-contrast and symbol modes designed with deutanopia in mind.</p>
+          <p>Yes. CLI high-contrast and symbol modes (deutanopia).</p>
         </details>
         <details class="glass-faq">
           <summary>How do I run the Wordle helper on my computer?</summary>
-          <p>Clone the repo, then <code>python wordle_combo_finder.py</code> or <code>python -m lexicon_locksmith</code>.</p>
+          <p>Clone; run <code>python wordle_combo_finder.py</code> or <code>python -m lexicon_locksmith</code>.</p>
         </details>
       </div>
     </section>
@@ -313,13 +295,13 @@ python wordle_combo_finder.py
 
   <footer class="site-footer">
     <div class="wrap footer-inner glass">
-      <p><strong>Lexicon Locksmith</strong> — open-source Wordle helper &amp; colorblind solver.</p>
+      <p><strong>Lexicon Locksmith</strong></p>
       <p class="footer-links">
         <a href="https://github.com/wifiknight45/lexicon_locksmith">GitHub</a>
-        <a href="https://github.com/wifiknight45/lexicon_locksmith/blob/main/LICENSE">MIT License</a>
+        <a href="https://github.com/wifiknight45/lexicon_locksmith/blob/main/LICENSE">MIT</a>
         <a href="sitemap.xml">Sitemap</a>
       </p>
-      <p class="footer-disclaimer">Not affiliated with The New York Times. Wordle is a trademark of its respective owners.</p>
+      <p class="footer-disclaimer">Not affiliated with The New York Times.</p>
     </div>
   </footer>
 
