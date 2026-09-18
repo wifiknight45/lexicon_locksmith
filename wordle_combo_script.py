@@ -1,3 +1,10 @@
+#!/usr/bin/env python3
+"""LEGACY / ARCHIVE — prefer wordle_combo_finder.py (canonical entrypoint).
+
+This root script embeds an outdated word list. The maintained solver lives in
+the lexicon_locksmith package and loads wordlist.txt from disk.
+"""
+
 """
 Enhanced Wordle Combinations Finder (Colorblind-Accessible) - Colab Fixed
 """
